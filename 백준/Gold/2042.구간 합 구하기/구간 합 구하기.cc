@@ -48,7 +48,7 @@ void Update(int node, int start, int end, int idx, ll diff) {
 void Input() {
     ll a, b, c;
 	int h;
-    bool iteration_trigger;
+
     cin >> N >> M >> K;
 	arr.resize(N);
 	h = (int)ceil(log2(N));
