@@ -1,0 +1,4 @@
+from functools import reduce
+
+def solution(numbers):
+    return reduce(lambda x, y : x + y, filter(lambda x : x not in numbers, [i for i in range(10)]))
