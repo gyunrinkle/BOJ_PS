@@ -1,4 +1,5 @@
 import sys
+from itertools import permutations
 
 # sys.stdin = open("input.txt", "r")
 input = sys.stdin.readline
@@ -9,21 +10,9 @@ def read_input():
     N, M = map(int, input().rstrip().split())
 
 
-def DFS_preorder(root, level, visited_num_list):
-    if level >= M:
-        print(" ".join(map(str, visited_num_list)))
-        return
-    for i in range(1, N + 1):
-        if i == root:
-            continue
-        if i in visited_num_list:
-            continue
-        DFS_preorder(i, level + 1, [*visited_num_list, i])
-
-
 def solve():
-    for i in range(1, N + 1):
-        DFS_preorder(i, 1, [i])
+    for ans_tuple in permutations(range(1, N + 1), M):
+        print(" ".join(map(str, ans_tuple)))
 
 
 if __name__ == "__main__":
