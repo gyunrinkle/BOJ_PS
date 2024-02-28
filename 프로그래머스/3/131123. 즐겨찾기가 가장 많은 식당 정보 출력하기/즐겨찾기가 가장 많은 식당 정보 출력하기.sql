@@ -4,6 +4,7 @@ WHERE favorites in (
     SELECT MAX(favorites)
     FROM rest_info
     GROUP BY food_type
-) 
+)
 GROUP BY food_type
 ORDER BY food_type DESC;
+
